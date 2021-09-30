@@ -1,4 +1,4 @@
-module github.com/riba2534/wecomchan/go-scf
+module github.com/adyzng/wecomchan/go-scf
 
 go 1.16
 

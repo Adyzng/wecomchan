@@ -25,13 +25,13 @@
 
 ### 1. 注册企业 & 创建机器人 & 获取相关配置信息
 
-此处不再赘述，项目主页有完整的操作方法，见：https://github.com/riba2534/wecomchan
+此处不再赘述，项目主页有完整的操作方法，见：https://github.com/adyzng/wecomchan
 
 ### 2. 下载编译好的二进制文件
 
-下载文件 [版本发布页面](https://github.com/riba2534/wecomchan/releases)：
+下载文件 [版本发布页面](https://github.com/adyzng/wecomchan/releases)：
 
-- [main.zip](https://github.com/riba2534/wecomchan/releases/download/2.1/main.zip) ：云函数可执行二进制文件，不用改动，等会直接上传即可。
+- [main.zip](https://github.com/adyzng/wecomchan/releases/download/2.1/main.zip) ：云函数可执行二进制文件，不用改动，等会直接上传即可。
 
 ### 3. 在腾讯云中创建云函数 & 配置环境变量
 
@@ -133,5 +133,5 @@
 
 ---
 
-如果发现bug，或者对本项目有任何建议，欢迎联系 `riba2534@qq.com` 或者直接提 [Issue](https://github.com/riba2534/wecomchan/issues).
+如果发现bug，或者对本项目有任何建议，欢迎联系 `riba2534@qq.com` 或者直接提 [Issue](https://github.com/adyzng/wecomchan/issues).
 

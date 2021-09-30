@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/adyzng/wecomchan/go-scf/consts"
+	"github.com/adyzng/wecomchan/go-scf/model"
 	jsoniter "github.com/json-iterator/go"
-	"github.com/riba2534/wecomchan/go-scf/consts"
-	"github.com/riba2534/wecomchan/go-scf/model"
 )
 
 var AccessToken string

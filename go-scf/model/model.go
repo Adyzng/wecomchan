@@ -7,17 +7,26 @@ type AssesTokenResp struct {
 	ExpiresIn   int    `json:"expires_in"`
 }
 
-type MsgText struct {
+// https://work.weixin.qq.com/api/doc/90002/90151/90854
+type WechatMsg struct {
+	ToUser                 string       `json:"touser"`
+	AgentId                string       `json:"agentid"`
+	MsgType                string       `json:"msgtype"`
+	EnableDuplicateCheck   int          `json:"enable_duplicate_check"`
+	DuplicateCheckInterval int          `json:"duplicate_check_interval"`
+	Text                   *TextMsg     `json:"text,omitempty"`
+	TextCard               *TextCardMsg `json:"textcard,omitempty"`
+}
+
+type TextMsg struct {
 	Content string `json:"content"`
 }
 
-// https://work.weixin.qq.com/api/doc/90002/90151/90854
-type WechatMsg struct {
-	ToUser                 string   `json:"touser"`
-	AgentId                string   `json:"agentid"`
-	MsgType                string   `json:"msgtype"`
-	Text                   *MsgText `json:"text"`
-	DuplicateCheckInterval int      `json:"duplicate_check_interval"`
+type TextCardMsg struct {
+	Title  string `json:"title"`
+	Desc   string `json:"description"`
+	URL    string `json:"url"`
+	BtnTxt string `json:"btntxt"`
 }
 
 type PostResp struct {

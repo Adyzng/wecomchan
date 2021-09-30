@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/riba2534/wecomchan/go-scf/consts"
-	"github.com/riba2534/wecomchan/go-scf/dal"
-	"github.com/riba2534/wecomchan/go-scf/service"
-	"github.com/riba2534/wecomchan/go-scf/utils"
+	"github.com/adyzng/wecomchan/go-scf/consts"
+	"github.com/adyzng/wecomchan/go-scf/dal"
+	"github.com/adyzng/wecomchan/go-scf/service"
+	"github.com/adyzng/wecomchan/go-scf/utils"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 	"github.com/tencentyun/scf-go-lib/events"
 )
@@ -29,15 +29,17 @@ func init() {
 }
 
 func HTTPHandler(ctx context.Context, event events.APIGatewayRequest) (events.APIGatewayResponse, error) {
-	path := event.Path
-	fmt.Println("req->", utils.MarshalToStringParam(event))
+	var path = event.Path
 	var result interface{}
-	if strings.HasPrefix(path, "/"+consts.FUNC_NAME) {
+	fmt.Println("req->", utils.MarshalToStringParam(event))
+
+	switch {
+	case strings.HasPrefix(path, "/"+consts.FUNC_NAME):
 		result = service.WeComChanService(ctx, event)
-	} else {
-		// 匹配失败返回原始HTTP请求
-		result = event
+	default:
+		result = event // 匹配失败返回原始HTTP请求
 	}
+
 	return events.APIGatewayResponse{
 		IsBase64Encoded: false,
 		StatusCode:      200,
